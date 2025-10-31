@@ -481,39 +481,18 @@ body {
 @media (max-width: 768px) {
     body {
         padding: 0;
+        padding-top: 300px;
     }
 
     .container {
         padding: 0;
     }
 
-    /* .header {
-        padding: 15px;
-        margin-bottom: 15px;
-        border-radius: 0 0 15px 15px;
-    } */
-
-    /* .header {
-        left: 0;
-        transform: none;
-        width: calc(100% - 20px);
-        max-width: none;
-        
-        padding: 15px;
-    } */
-
     .header {
-        /* === 核心修正：讓 Header 置中但有最大寬度限制 === */
-        
-        /* 繼承 PC 端的置中技巧 */
         left: 50%; 
         transform: translateX(-50%); 
-
-        /* 讓 Header 盡量寬，但不超過視口寬度減去邊距（例如 95% 或固定寬度） */
         width: 100%; 
-        /* 限制 Header 的實際最大寬度 */
-        max-width: calc(100% - 20px); /* 讓左右各留 15px 邊距 (30px/2 = 15px) */
-        
+        max-width: calc(100% - 20px); 
         padding: 15px;
         border-radius: 0 0 15px 15px; 
     }
