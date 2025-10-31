@@ -63,7 +63,6 @@ function createQuestionCard(q, displayIndex, originalIndex) {
         `;
     }
     
-    
     let optionsHTML = '';
     q.option.forEach((opt, idx) => {
         let optionClass = 'option';
@@ -77,15 +76,22 @@ function createQuestionCard(q, displayIndex, originalIndex) {
         } else if (userAnswers[originalIndex] === idx) {
             optionClass += ' selected';
         }
-        
+
+        // 🔽 新增圖片判斷
+        let optionContent = '';
+        if (typeof opt === 'string' && opt.startsWith('image/')) {
+            optionContent = `<img src="${opt}" alt="選項圖片" class="option-image" onerror="this.style.display='none'">`;
+        } else {
+            optionContent = `<div class="option-text">${opt}</div>`;
+        }
+
         optionsHTML += `
             <div class="${optionClass}" onclick="selectOption(${originalIndex}, ${idx})">
                 <div class="option-label">${String.fromCharCode(65 + idx)}</div>
-                <div class="option-text">${opt}</div>
+                ${optionContent}
             </div>
         `;
     });
-    
     
     let optionEndHTML = '';
     if (q.optionend && q.optionend.trim()) {
