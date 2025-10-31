@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let lastScroll = 0;
     
-    const scrollThreshold = 50; 
+    const scrollThreshold = 100; 
     
     const scrollDeadZone = 5; 
 

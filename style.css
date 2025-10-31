@@ -478,10 +478,11 @@ body {
 }
 
 
+/* === 手機與平板通用 (max-width: 768px) === */
 @media (max-width: 768px) {
     body {
-        padding: 0;
-        padding-top: 300px;
+        padding: 280px 0 0 0;
+        width: 100%;
     }
 
     .container {
@@ -489,17 +490,18 @@ body {
     }
 
     .header {
-        left: 50%; 
-        transform: translateX(-50%); 
-        width: 100%; 
-        max-width: calc(100% - 20px); 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: calc(100% - 20px);
         padding: 15px;
-        border-radius: 0 0 15px 15px; 
+        border-radius: 0 0 15px 15px;
+        transition: transform 0.3s ease, padding 0.3s ease;
     }
 
     .header.scrolled {
-        transform: translateY(-130px) translateX(-50%);
-        padding: 10px 15px;  
+        transform: translate(-50%, -130px);
+        padding: 10px 15px;
     }
 
     .header h1 {
@@ -510,27 +512,30 @@ body {
     .controls {
         flex-direction: column;
         width: 100%;
+        gap: 10px;
     }
 
-    .search-box {
+    .search-box,
+    .filter-btn {
         width: 100%;
-        min-width: auto;
     }
 
     .filter-btn {
-        width: 100%;
         justify-content: center;
     }
 
     .stats {
+        display: flex;
+        flex-wrap: wrap;
         gap: 8px;
         margin-top: 15px;
     }
 
     .stat-item {
         flex: 1;
-        padding: 12px 10px;
         min-width: 0;
+        padding: 12px 10px;
+        text-align: center;
     }
 
     .stat-item .number {
@@ -549,6 +554,7 @@ body {
     .question-card {
         padding: 20px 15px;
         border-radius: 15px;
+        transition: transform 0.2s ease;
     }
 
     .question-card:hover {
@@ -556,6 +562,7 @@ body {
     }
 
     .question-header {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
@@ -569,19 +576,26 @@ body {
     .question-text {
         font-size: 16px;
         line-height: 1.6;
+        word-break: break-word;
     }
 
     .question-image img {
         max-height: 300px;
+        width: 100%;
+        object-fit: contain;
     }
 
     .options {
+        display: flex;
+        flex-direction: column;
         gap: 12px;
     }
 
     .option {
+        display: flex;
+        align-items: center;
         padding: 15px;
-        flex-direction: row;
+        transition: transform 0.2s ease;
     }
 
     .option:hover {
@@ -596,14 +610,21 @@ body {
         width: 32px;
         height: 32px;
         font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        flex-shrink: 0;
     }
 
     .option-text {
         font-size: 15px;
         word-break: break-word;
+        flex: 1;
     }
 
     .button-group {
+        display: flex;
         flex-direction: column;
         gap: 10px;
         margin-top: 20px;
@@ -624,7 +645,7 @@ body {
     .modal-content {
         width: 95%;
         padding: 25px 20px;
-        margin: 10px;
+        margin: 10px auto;
     }
 
     .modal-content h2 {
@@ -632,6 +653,8 @@ body {
     }
 
     .filter-options {
+        display: flex;
+        flex-direction: column;
         gap: 12px;
     }
 
@@ -644,8 +667,9 @@ body {
     }
 }
 
+/* === 小螢幕手機 (max-width: 480px) === */
+/* @media (max-width: 480px) {
 
-@media (max-width: 480px) {
     .header h1 {
         font-size: 1.3em;
     }
@@ -684,4 +708,4 @@ body {
     .stat-item .label {
         font-size: 11px;
     }
-}
+} */
